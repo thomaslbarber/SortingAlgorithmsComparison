@@ -8,6 +8,9 @@ namespace TestSortingAlgorithmsComparison;
 [TestClass]
 public class TestAlgorithms
 {
+    /// <summary>
+    /// Tests the BubbleSort.cs class.
+    /// </summary>
     [TestMethod]
     public void TestBubbleSort()
     {
@@ -22,6 +25,9 @@ public class TestAlgorithms
         }
     }
     
+    /// <summary>
+    /// Tests the CocktailSort.cs class.
+    /// </summary>
     [TestMethod]
     public void TestCocktailSort()
     {
@@ -36,6 +42,9 @@ public class TestAlgorithms
         }
     }
     
+    /// <summary>
+    /// Tests the InsertionSort.cs class.
+    /// </summary>
     [TestMethod]
     public void TestInsertionSort()
     {
@@ -50,6 +59,9 @@ public class TestAlgorithms
         }
     }
     
+    /// <summary>
+    /// Tests the SelectionSort.cs class.
+    /// </summary>
     [TestMethod]
     public void TestSelectionSort()
     {
@@ -64,6 +76,9 @@ public class TestAlgorithms
         }
     }
     
+    /// <summary>
+    /// Tests the QuickSort.cs class.
+    /// </summary>
     [TestMethod]
     public void TestQuickSort()
     {

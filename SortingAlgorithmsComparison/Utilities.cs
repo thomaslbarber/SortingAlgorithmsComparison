@@ -27,6 +27,11 @@ public static class Utilities
         set { currentArraySize = value; }
     }
     
+    /// <summary>
+    /// Determines whether the list is in the properly sorted order (low -> high).
+    /// </summary>
+    /// <param name="numbersToSort"></param>
+    /// <returns>A boolean valued as true if the list was sorted successfully (false if not).</returns>
     public static bool DetermineWhetherSuccessful(int[] numbersToSort)
     {
         for (int i = 1; i < numbersToSort.Length; i++)
@@ -40,11 +45,18 @@ public static class Utilities
         return true;
     }
     
+    /// <summary>
+    /// Sets the numbersToSort to the initialNumbers, resetting it. 
+    /// </summary>
     private static void ResetNumbers()
     {
         initialNumbers.CopyTo(numbersToSort, 0);
     }
 
+    /// <summary>
+    /// Generates a random list of integer numbers given an array size.
+    /// </summary>
+    /// <param name="arraySize"></param>
     public static void GenerateInitialNumbers(int arraySize)
     {
         initialNumbers = new int[Utilities.ArraySizes[Utilities.CurrentArraySize]];
