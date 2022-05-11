@@ -5,3 +5,4 @@ A C# project that compares various sorting algorithms over a range of array size
 The project currently implements:
 - Bubble Sort
 - Insertion Sort
+- Selection Sort
