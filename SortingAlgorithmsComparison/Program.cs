@@ -18,5 +18,10 @@ public class Program
         SortingAlgorithm selectionSort = new SelectionSort();
         selectionSort.PrintAlgorithm();
         selectionSort.PrintNumbers(selectionSort.Sort(numbersToSort));
+        
+        numbersToSort = new int[] { 12, 5, 42, 74, 2, 91, 26, 83, 59, 63, 9 };
+        SortingAlgorithm cocktailSort = new CocktailSort();
+        cocktailSort.PrintAlgorithm();
+        cocktailSort.PrintNumbers(cocktailSort.Sort(numbersToSort));
     }
 }
