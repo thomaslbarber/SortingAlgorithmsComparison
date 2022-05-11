@@ -1,6 +1,10 @@
-namespace Algorithms;
-
-public abstract class SortingAlgorithm
+namespace Algorithms 
 {
-    public abstract int[] Sort(int[] numbersToSort);
+    /// <summary>
+    /// Abstract superclass for all sorting algorithms
+    /// </summary>
+    public abstract class SortingAlgorithm
+    {
+        public abstract int[] Sort(int[] numbersToSort);
+    }
 }
