@@ -1,81 +1,82 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Algorithms;
 using System;
+using SortingAlgorithmsComparison;
+
 namespace TestSortingAlgorithmsComparison;
 
 [TestClass]
 public class TestAlgorithms
 {
-    private int[] initialNumbers;
-    private int[] numbersToSort;
-    private int[] arraySizes;
-    private int currentArraySize = 0;
-    
     [TestMethod]
     public void TestBubbleSort()
     {
-        arraySizes = new int[5] { 10, 100, 1000, 10000, 100000 };
-        currentArraySize = 0;
-
-        for (int i = 0; i < arraySizes.Length; i++, currentArraySize++)
+        Utilities.CurrentArraySize = 0;
+        
+        for (int i = 0; i < Utilities.ArraySizes.Length; i++, Utilities.CurrentArraySize++)
         {
-            initialNumbers = new int[arraySizes[currentArraySize]];
-            numbersToSort = new int[arraySizes[currentArraySize]];
-
-            GenerateInitialNumbers();
+            Utilities.GenerateInitialNumbers(Utilities.ArraySizes[Utilities.CurrentArraySize]);
 
             SortingAlgorithm bubbleSort = new BubbleSort();
-            Assert.IsTrue(DetermineWhetherSuccessful(bubbleSort.Sort(numbersToSort)));
+            Assert.IsTrue(Utilities.DetermineWhetherSuccessful(bubbleSort.Sort(Utilities.NumbersToSort)));
         }
     }
     
+    [TestMethod]
+    public void TestCocktailSort()
+    {
+        Utilities.CurrentArraySize = 0;
+
+        for (int i = 0; i < Utilities.ArraySizes.Length; i++, Utilities.CurrentArraySize++)
+        {
+            Utilities.GenerateInitialNumbers(Utilities.ArraySizes[Utilities.CurrentArraySize]);
+
+            SortingAlgorithm cocktailSort = new CocktailSort();
+            Assert.IsTrue(Utilities.DetermineWhetherSuccessful(cocktailSort.Sort(Utilities.NumbersToSort)));
+        }
+    }
     
     [TestMethod]
     public void TestInsertionSort()
     {
-        arraySizes = new int[5] { 10, 100, 1000, 10000, 100000 };
-        currentArraySize = 0;
+        Utilities.CurrentArraySize = 0;
 
-        for (int i = 0; i < arraySizes.Length; i++, currentArraySize++)
+        for (int i = 0; i < Utilities.ArraySizes.Length; i++, Utilities.CurrentArraySize++)
         {
-            initialNumbers = new int[arraySizes[currentArraySize]];
-            numbersToSort = new int[arraySizes[currentArraySize]];
-
-            GenerateInitialNumbers();
+            Utilities.GenerateInitialNumbers(Utilities.ArraySizes[Utilities.CurrentArraySize]);
 
             SortingAlgorithm insertionSort = new InsertionSort();
-            Assert.IsTrue(DetermineWhetherSuccessful(insertionSort.Sort(numbersToSort)));
+            Assert.IsTrue(Utilities.DetermineWhetherSuccessful(insertionSort.Sort(Utilities.NumbersToSort)));
         }
-    }
-
-
-    public bool DetermineWhetherSuccessful(int[] numbersToSort)
-    {
-        for (int i = 1; i < numbersToSort.Length; i++)
-        {            
-            if (numbersToSort[i - 1] > numbersToSort[i])
-            {
-                return false;
-            }
-        }
-
-        return true;
     }
     
-    private void ResetNumbers()
+    [TestMethod]
+    public void TestSelectionSort()
     {
-        initialNumbers.CopyTo(numbersToSort, 0);
-    }
+        Utilities.CurrentArraySize = 0;
 
-    public void GenerateInitialNumbers()
-    {
-        Random randomNumberGenerator = new Random();
-        
-        for (int i = 0; i < arraySizes[currentArraySize]; i++)
+        for (int i = 0; i < Utilities.ArraySizes.Length; i++, Utilities.CurrentArraySize++)
         {
-            initialNumbers[i] = randomNumberGenerator.Next();
-        }
+            Utilities.GenerateInitialNumbers(Utilities.ArraySizes[Utilities.CurrentArraySize]);
 
-        ResetNumbers();
+            SortingAlgorithm selectionSort = new SelectionSort();
+            Assert.IsTrue(Utilities.DetermineWhetherSuccessful(selectionSort.Sort(Utilities.NumbersToSort)));
+        }
     }
+    
+    [TestMethod]
+    public void TestQuickSort()
+    {
+        Utilities.CurrentArraySize = 0;
+
+        for (int i = 0; i < Utilities.ArraySizes.Length; i++, Utilities.CurrentArraySize++)
+        {
+            Utilities.GenerateInitialNumbers(Utilities.ArraySizes[Utilities.CurrentArraySize]);
+
+            SortingAlgorithm quickSort = new QuickSort();
+            Assert.IsTrue(Utilities.DetermineWhetherSuccessful(quickSort.Sort(Utilities.NumbersToSort)));
+        }
+    }
+
+
 }
