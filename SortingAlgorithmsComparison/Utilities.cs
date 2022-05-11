@@ -1,3 +1,4 @@
+using Algorithms;
 namespace SortingAlgorithmsComparison;
 
 public static class Utilities
@@ -28,6 +29,28 @@ public static class Utilities
     }
     
     /// <summary>
+    /// Creates the array of all sorting algorithms.
+    /// </summary>
+    /// <returns>All sorting algorithms in an array.</returns>
+    public static SortingAlgorithm[] CreateAlgorithms()
+    {
+        return new SortingAlgorithm[] { new BubbleSort(), new CocktailSort(), new SelectionSort(), new InsertionSort(), new QuickSort() };
+    }
+    
+    
+    /// <summary>
+    /// Tests a specific sorting algorithm, getting the name, sorting it, and calculating both the time taken and whether it was successful
+    /// </summary>
+    /// <param name="algorithm"></param>
+    public static void TestAlgorithm(SortingAlgorithm algorithm)
+    {
+        algorithm.PrintAlgorithm();
+        algorithm.PrintWhetherSuccessful(algorithm.BeginSorting(numbersToSort));
+        algorithm.PrintTimeTaken();
+        Console.WriteLine();
+    }
+    
+    /// <summary>
     /// Determines whether the list is in the properly sorted order (low -> high).
     /// </summary>
     /// <param name="numbersToSort"></param>
@@ -45,10 +68,12 @@ public static class Utilities
         return true;
     }
     
+
+    
     /// <summary>
     /// Sets the numbersToSort to the initialNumbers, resetting it. 
     /// </summary>
-    private static void ResetNumbers()
+    public static void ResetNumbers()
     {
         initialNumbers.CopyTo(numbersToSort, 0);
     }
