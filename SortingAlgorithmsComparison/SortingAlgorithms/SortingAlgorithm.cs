@@ -4,16 +4,16 @@ using System.Diagnostics;
 namespace Algorithms 
 {
     /// <summary>
-    /// Abstract superclass for all sorting algorithms
+    /// Abstract superclass for all sorting algorithms.
     /// </summary>
     public abstract class SortingAlgorithm
     {
         private Stopwatch stopwatch = new Stopwatch(); // Used to measure time taken to sort.
         
         /// <summary>
-        /// Abstract Sorting function for each sorting algorithm to implement.
+        /// Abstract sorting function for each sorting algorithm to implement.
         /// </summary>
-        /// <param name="numbersToSort">A list of integer numbers to sort.</param>
+        /// <param name="numbersToSort">The array of integer numbers to sort.</param>
         /// <returns>The sorted list.</returns>
         public abstract int[] Sort(int[] numbersToSort);
         
@@ -24,6 +24,7 @@ namespace Algorithms
         /// <returns>The sorted array of integers.</returns>
         public int[] BeginSorting(int[] numbersToSort)
         {
+            stopwatch.Reset();
             stopwatch.Start();
             numbersToSort = Sort(numbersToSort); // Sort the array.
             stopwatch.Stop();
@@ -57,6 +58,9 @@ namespace Algorithms
             Console.Write("Array failed to sort!");
         }
         
+        /// <summary>
+        /// Prints the time the algorithm has taken to sort the last list.
+        /// </summary>
         public void PrintTimeTaken()
         {
             if (stopwatch != null)

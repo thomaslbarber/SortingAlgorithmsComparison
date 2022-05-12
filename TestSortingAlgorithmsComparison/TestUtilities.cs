@@ -3,6 +3,9 @@ using SortingAlgorithmsComparison;
 
 namespace TestSortingAlgorithmsComparison
 {
+    /// <summary>
+    /// Tests the utility functions provided in Utilities.cs.
+    /// </summary>
     [TestClass]
     public class TestUtilities
     {

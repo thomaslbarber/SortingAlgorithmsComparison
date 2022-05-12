@@ -1,10 +1,16 @@
 namespace Algorithms 
 {
     /// <summary>
-    /// Selection Sort Implementation
+    /// Selection Sort Implementation.
     /// </summary>
     public class SelectionSort : SortingAlgorithm
     {
+        /// <summary>
+        /// Implements sort using the selection sort algorithm.
+        /// </summary>
+        /// <remarks> https://en.wikipedia.org/wiki/Selection_sort </remarks>
+        /// <param name="numbersToSort">The array of integer numbers to sort.</param>
+        /// <returns>The sorted integer array.</returns>
         public override int[] Sort(int[] numbersToSort)
         {
             int indexOfMin;

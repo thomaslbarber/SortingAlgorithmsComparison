@@ -1,10 +1,16 @@
 namespace Algorithms
 {
     /// <summary>
-    /// Cocktail Sort Implementation
+    /// Cocktail Sort Implementation.
     /// </summary>
     public class CocktailSort : SortingAlgorithm
     {
+        /// <summary>
+        /// Implements sort using the cocktail sort algorithm.
+        /// </summary>
+        /// <remarks> https://en.wikipedia.org/wiki/Cocktail_shaker_sort </remarks>
+        /// <param name="numbersToSort">The array of integer numbers to sort.</param>
+        /// <returns></returns>
         public override int[] Sort(int[] numbersToSort)
         {
             bool swapped = true;

@@ -1,10 +1,16 @@
 namespace Algorithms
 {
     /// <summary>
-    /// Insertion Sort Implementation
+    /// Insertion Sort Implementation.
     /// </summary>
     public class InsertionSort : SortingAlgorithm
     {
+        /// <summary>
+        /// Implements sort using the insertion sort algorithm.
+        /// </summary>
+        /// <remarks> https://en.wikipedia.org/wiki/Insertion_sort </remarks>
+        /// <param name="numbersToSort">The array of integer numbers to sort.</param>
+        /// <returns>The sorted integer array.</returns>
         public override int[] Sort(int[] numbersToSort)
         {
             int currentValue;

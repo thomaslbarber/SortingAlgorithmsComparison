@@ -1,10 +1,16 @@
 namespace Algorithms
 {
     /// <summary>
-    /// Bubble Sort Implementation
+    /// Bubble Sort Implementation.
     /// </summary>
     public class BubbleSort : SortingAlgorithm
     {
+        /// <summary>
+        /// Implements sort using the bubble sort algorithm.
+        /// </summary>
+        /// <remarks> https://en.wikipedia.org/wiki/Bubble_sort </remarks>
+        /// <param name="numbersToSort">The array of integer numbers to sort.</param>
+        /// <returns>The sorted integer array.</returns>
         public override int[] Sort(int[] numbersToSort)
         {
             int temporary = 0;

@@ -4,6 +4,9 @@ using SortingAlgorithmsComparison;
 
 namespace TestSortingAlgorithmsComparison
 {
+    /// <summary>
+    /// Tests the various algorithms provided in SortingAlgorithmsComparisons/SortingAlgorithms/...
+    /// </summary>
     [TestClass]
     public class TestAlgorithms
     {

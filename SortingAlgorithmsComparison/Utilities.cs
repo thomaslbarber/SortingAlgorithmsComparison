@@ -1,6 +1,9 @@
 using Algorithms;
 namespace SortingAlgorithmsComparison;
 
+/// <summary>
+/// A range of utility functions used elsewhere.
+/// </summary>
 public static class Utilities
 {
     private static int[] initialNumbers;
@@ -14,7 +17,6 @@ public static class Utilities
     {
         get { return numbersToSort; }
     }
-
     
     public static int[] ArraySizes
     {
@@ -39,9 +41,9 @@ public static class Utilities
     
     
     /// <summary>
-    /// Tests a specific sorting algorithm, getting the name, sorting it, and calculating both the time taken and whether it was successful
+    /// Tests a specific sorting algorithm, getting the name, sorting it, and calculating both the time taken and whether it was successful.
     /// </summary>
-    /// <param name="algorithm"></param>
+    /// <param name="algorithm">The SortingAlgorithm to test.</param>
     public static void TestAlgorithm(SortingAlgorithm algorithm)
     {
         algorithm.PrintAlgorithm();
@@ -53,13 +55,13 @@ public static class Utilities
     /// <summary>
     /// Determines whether the list is in the properly sorted order (low -> high).
     /// </summary>
-    /// <param name="numbersToSort"></param>
+    /// <param name="sortedNumbers">The array of integers that should be sorted.</param>
     /// <returns>A boolean valued as true if the list was sorted successfully (false if not).</returns>
-    public static bool DetermineWhetherSuccessful(int[] numbersToSort)
+    public static bool DetermineWhetherSuccessful(int[] sortedNumbers)
     {
-        for (int i = 1; i < numbersToSort.Length; i++)
+        for (int i = 1; i < sortedNumbers.Length; i++)
         {            
-            if (numbersToSort[i - 1] > numbersToSort[i])
+            if (sortedNumbers[i - 1] > sortedNumbers[i])
             {
                 return false;
             }
@@ -81,7 +83,7 @@ public static class Utilities
     /// <summary>
     /// Generates a random list of integer numbers given an array size.
     /// </summary>
-    /// <param name="arraySize"></param>
+    /// <param name="arraySize">The size of array to generate.</param>
     public static void GenerateInitialNumbers(int arraySize)
     {
         initialNumbers = new int[Utilities.ArraySizes[Utilities.CurrentArraySize]];
