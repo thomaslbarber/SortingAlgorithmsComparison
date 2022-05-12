@@ -8,30 +8,29 @@ namespace Algorithms
         /// <summary>
         /// Sorts a (portion of an) array, divides it into partitions, then sorts those.
         /// </summary>
-        /// <param name="numbersToSort"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
+        /// <param name="numbersToSort">The array of integer numbers to sort.</param>
+        /// <param name="start">The start index.</param>
+        /// <param name="end">The end index.</param>
         private void RecursiveSort(int[] numbersToSort, int start, int end)
         {
-            int i;
-            if (start < end)
-            {
-                // Partition array and get the pivot index. 
-                i = Partition(numbersToSort, start, end);
-                
-                // Sort the two partitions.
-                RecursiveSort(numbersToSort, start, i - 1);
-                RecursiveSort(numbersToSort, i + 1, end);
-            }
+            // Ensure indices are in the correct order.
+            if (start >= end || start < 0) { return; }
+            
+            // Partition array and get the pivot index. 
+            int i = Partition(numbersToSort, start, end);
+            
+            // Sort the two partitions.
+            RecursiveSort(numbersToSort, start, i - 1);
+            RecursiveSort(numbersToSort, i + 1, end);
         }
         
         /// <summary>
         /// Divides the array into two partitions.
         /// </summary>
-        /// <param name="numbersToSort"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        /// <returns></returns>
+        /// <param name="numbersToSort">The array of integer numbers to sort.</param>
+        /// <param name="start">The start index.</param>
+        /// <param name="end">The end index.</param>
+        /// <returns>The pivot index.</returns>
         private int Partition(int[] numbersToSort, int start, int end)
         {
             int temporary;
